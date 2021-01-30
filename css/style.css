@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
+@import "utilities.css";
+@import "variables.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--pure);
+  background: var(--primary);
+}
+
+header {
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.344)),
+    url("/img/sunrise.jpg");
+  min-height: 100vh;
+  background-size: cover;
+}
+
+header nav {
+  padding: 20px 40px 20px 100px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+header nav .nav-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .nav-right .nav-links {
+  display: flex;
+}
+header nav .nav-right .nav-links a {
+  text-decoration: none;
+  margin-right: 2rem;
+  color: var(--pure);
+  text-transform: uppercase;
+  position: relative;
+}
+
+header nav .nav-right .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--pure);
+  transition: width 0.4s ease-in-out;
+}
+header nav .nav-right .nav-links a:hover::after {
+  width: 100%;
+}
+header nav .nav-right .nav-links a.active::after {
+  width: 100%;
+}
+header nav .nav-right .search {
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+header nav .nav-right .search input {
+  color: #ffffff;
+  outline: none;
+  margin-left: 15px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+.social div {
+  /* position: absolute; */
+  border: 2px solid var(--pure);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  animation: socialmove 1s ease-in-out forwards;
+}
+
+.social i {
+  color: var(--pure);
+}
+.social div:hover i {
+  color: var(--dark);
+  transition: all 0.3s ease-in-out;
+}
+
+.social div:hover {
+  background: var(--pure);
+}
+.social {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+@keyframes socialmove {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+.hero {
+  position: relative;
+}
+
+.hero .cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh-8px);
+  margin-left: 200px;
+}
+
+.hero .cta h1 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.cta > div {
+  flex: 1;
+}
+
+.hero .cta .left {
+  padding: 80px 60px 0 30px;
+}
+.hero .cta .right img {
+  height: 60vh;
+  transform: rotate(20deg);
+  margin-top: 90px;
+  animation: moveInSpace 13s ease-in-out infinite alternate;
+}
+
+@keyframes moveInSpace {
+  50% {
+    transform: translateY(100px) rotate(-30deg) scale(0.6);
+  }
+}
+
+section.strip {
+  background: var(--dark);
+  display: flex;
+  padding: 50px 0;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+section.rocket {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  grid-gap: 80px;
+  padding: 6rem 2rem;
+}
+
+section.rocket .rocket-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.rocket .rocket-body span {
+  font-size: 0;
+}
+section.rocket .rocket-body span img {
+  width: 100%;
+}
+section.rocket .block {
+  width: 70%;
+}
+section.rocket .block h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+section.rocket .block .underline {
+  position: relative;
+  margin-bottom: 40px;
+}
+section.rocket .block .underline::before {
+  content: "";
+  left: 0;
+  bottom: -10px;
+  position: absolute;
+  display: block;
+  width: 40%;
+  height: 2px;
+  background: var(--pure);
+}
+section.rocket p {
+  line-height: 1.6;
+}
+section.rocket .block h2 {
+  font-weight: 400;
+  margin-bottom: 38px;
+}
+section.rocket .block.payload {
+  padding-top: 200px;
+}
+section.rocket .block.secondstage {
+  padding-top: 60px;
+}
+section.rocket .block.payload h2 {
+  padding-left: 80px;
+}
+section.rocket .block.dragon {
+  padding-top: 55px;
+}
+section.rocket .block button {
+  margin-top: 30px;
+}
+section.rocket .block.composit {
+  padding-top: 55px;
+}
+section.rocket .block button {
+  margin-top: 30px;
+}
+section.rocket .block.stage {
+  padding-top: 55px;
+}
+section.rocket .block button {
+  margin-top: 30px;
+}
+section.rocket .block.capacity {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+}
+section.rocket .block.capacity2 {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+section.rocket .block.capacity > div:first-child {
+  margin-right: 40px;
+}
+section.rocket .block.capacity h4 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+section.rocket .block.capacity h6 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+section.rocket .block.capacity h6 small {
+  font-size: 1rem;
+}
+section.rocket .block.capacity2 h4 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+section.rocket .block.capacity2 h6 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+section.rocket .block.capacity2 h6 small {
+  font-size: 0.8rem;
+}
+
+section.rocket .right-block .capacity {
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+}
+section.rocket .right-block .engines {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+section.rocket .right-block .engines img {
+  width: 180px;
+}
+section.rocket .right-block .marine {
+  padding-top: 90px;
+  width: 70%;
+  text-align: center;
+}
+section.rocket .right-block .marine h2 {
+  font-size: 0.9rem;
+  margin-bottom: 26px;
+}
+section.rocket .right-block .marine p {
+  font-size: 0.9rem;
+}
+section.rocket .right-block .floating-img {
+  position: sticky;
+  float: right;
+  top: 60px;
+}
+section.rocket .right-block .floating-img img {
+  width: 135px;
+}
+
+footer {
+  background: var(--dark);
+  padding: 60px 20px;
+}
+
+footer.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+footer .copyright span {
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+footer .copyright img {
+  height: 30px;
+}
+
+footer h1 {
+  font-size: 18px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+footer h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--pure);
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer ul li:nth-child(even) {
+  margin: 10px 0;
+}
+
+footer ul li a {
+  color: var(--mild);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+footer ul li a:hover {
+  color: var(--pure);
+}
+
+footer .footer-socials a {
+  margin-right: 20px;
+  font-size: 22px;
+  color: var(--mild);
+}
+
+footer .footer-socials a:hover {
+  color: var(--pure);
+}
